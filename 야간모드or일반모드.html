@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script>
+    var aa={
+        배경색: function(색){
+            document.querySelector('body').style.backgroundColor=색;
+        },
+        글자색: function(색){
+            document.querySelector('body').style.color=색;
+        },
+        버튼글자: function(글자){
+            document.querySelector('#aa').value=글자;
+        },
+        링크글자: function(글자){
+            for(i=0;i<as.length;i++){
+        as[i].style.color='글자'
+            }
+        }
+    }
+     function 함수(나){
+       
+        
+        var d=document.querySelector('a').style;
+        var as=document.querySelectorAll('a');
+    if(document.querySelector('#aa').value=='야간모드'){
+        aa.배경색('black');
+        aa.글자색('white');
+        aa.버튼글자('일반모드');
+        aa.링크글자('white');
+    }
+    else{
+        aa.배경색('white');
+        aa.글자색('black');
+        aa.버튼글자('야간모드');
+        aa.링크글자('black');}}
+</script>
+</head>
+<body>
+    <ol id="asd">
+        <li><a href="images/김민주.jpg">김민주.link</a></li>
+        <li><a href="images/김채원.jpg">김채원.link</a></li>
+        <li><a href="images/레이.jpg">레이.link</a></li>
+        <li><a href="images/민니.jpg">민니.link</a></li>
+        <li><a href="images/안유진.jpg">안유진.link</a></li>
+    </ol>
+    <input id="aa" type="button" value="야간모드" onclick="
+        함수(this)
+    ">
+
+    <p>안안아낭낭낭나안안안ㅇ나안ㅇ낭낭</p>
+
+</body>
+</html>
