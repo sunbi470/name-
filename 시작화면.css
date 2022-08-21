@@ -1,0 +1,39 @@
+body{
+    background-color:#ffd5cc;
+}
+
+.container{
+    display: grid;
+    height: 90vh;
+   
+    grid-template-columns: 150px 1fr 150px 150px 1fr 150px ;
+    grid-template-rows: 50px 50px 1fr 50px 50px ;   
+    grid-gap: 10px ;
+    grid-template-areas:'제목 제목 제목 제목 제목 제목 '
+                        '기준변경1 기준변경1 기준변경1 기준변경2 기준변경2 기준변경2'
+                        '남돌순위 남돌순위 남돌순위 여돌순위 여돌순위 여돌순위'
+                        '남돌만들기 그룹감상하기 여돌만들기 커뮤니티 커뮤니티 커뮤니티'
+                        '남돌만들기 그룹감상하기 여돌만들기 패치노트 패치노트 패치노트';
+
+
+}
+
+.container div{
+
+
+    padding: 20px;
+    border: 1px solid #ffd5cc;
+}
+ol{
+    font-size: 20px;
+}
+.제목{ background-color:#ffd5cc; grid-area: 제목; text-align: center; font-size: 30px;}
+.기준변경1{ background-color:#ffd5cc; grid-area: 기준변경1;  }
+.남돌순위{ background-color:#bcddff; grid-area: 남돌순위;}
+.기준변경2{ background-color:#ffd5cc; grid-area: 기준변경2; }
+.여돌순위{ background-color: #fcc3d7; grid-area:  여돌순위;}
+.그룹감상하기{ background-color: #faefca; grid-area: 그룹감상하기;}
+.남돌만들기{ background-color: #faefca;grid-area: 남돌만들기;}
+.여돌만들기{background-color: #faefca; grid-area: 여돌만들기;}
+.커뮤니티{background-color: #bbfaed; grid-area:커뮤니티 ;}
+.패치노트{background-color: #dabfb8; grid-area: 패치노트;}
