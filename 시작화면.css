@@ -29,11 +29,11 @@ ol{
 }
 .제목{ background-color:#ffd5cc; grid-area: 제목; text-align: center; font-size: 30px;}
 .기준변경1{ background-color:#ffd5cc; grid-area: 기준변경1;  }
-.남돌순위{ background-color:#bcddff; grid-area: 남돌순위;}
+.남돌순위{ background-color:#bbdefa; grid-area: 남돌순위;}
 .기준변경2{ background-color:#ffd5cc; grid-area: 기준변경2; }
-.여돌순위{ background-color: #fcc3d7; grid-area:  여돌순위;}
+.여돌순위{ background-color: #f5c7d8; grid-area:  여돌순위;}
 .그룹감상하기{ background-color: #faefca; grid-area: 그룹감상하기;}
 .남돌만들기{ background-color: #faefca;grid-area: 남돌만들기;}
 .여돌만들기{background-color: #faefca; grid-area: 여돌만들기;}
-.커뮤니티{background-color: #bbfaed; grid-area:커뮤니티 ;}
+.커뮤니티{background-color: #fabbf5; grid-area:커뮤니티 ;}
 .패치노트{background-color: #dabfb8; grid-area: 패치노트;}

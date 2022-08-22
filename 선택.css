@@ -1,0 +1,75 @@
+
+
+body{
+    background-color:#ffd5cc;
+}
+
+
+div.사진삭제{
+    background-color:  #f5c7d8;
+}
+.전체삭제그룹저장{
+    width: 100%;
+    height: 50%;
+    background-color: #6bd0f8;
+}
+
+div.선택된사진모음{
+    width: 80%;
+    height: 250px;
+    border: 3px solid #003458;
+    background-color:  #f5c7d8;
+    float: left;}
+div.사진삭제{
+    float:right ;
+    width: 18%;
+    height: 250px;
+    border: 3px solid #003458;}
+.사진모음1{
+    padding: 3px;
+    width: 98.5%;
+    height: 75vh;
+    border: 3px solid #003458;
+    background-color: #f5c7d8;
+    display:none ;
+    transform: translate(0%, 0%);
+    position: absolute;
+    top: 290px;
+
+
+            
+}
+.사진모음2{
+    padding: 3px;
+    width: 98.5%;
+    height: 75vh;
+    border: 3px solid #003458;
+    background-color: #f5c7d8;
+    display:none ;
+    transform: translate(0%, 0%);
+    position: absolute;
+    top: 290px;
+
+}
+.사진모음3{
+    padding: 3px;
+    width: 98.5%;
+    height: 75vh;
+    border: 3px solid #003458;
+    background-color: #f5c7d8;
+    display:none ;
+    transform: translate(0%, 0%);
+    position: absolute;
+    top: 290px;
+
+}
+.칸분활{
+    border: 3px solid #003458;
+
+}
+h4{
+    
+    float:left;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+}

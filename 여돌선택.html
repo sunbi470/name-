@@ -1,309 +1,1006 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>아이돌 FA</title>
-    <script src="마지막3.js"></script>
-    <style>
-      img{
-        width: 150px;
-      }
-    </style>
-<style>
-    div.그룹명{float: left;}
-    div.그룹설명{float: right;}
-    div.그룹명설명{float: left;}
 
-    div.선택된사진모음{
-        width: 80%;
-        height: 250px;
-        border: 3px solid #003458;
-        float: left;}
-    div.사진삭제{
-        float:right ;
-        width: 18%;
-        height: 250px;
-        border: 3px solid #003458;}
-    div.사진모음{
-        width: 100%;
-        height: 700px;
-        border: 3px solid #003458;}
-</style>
+    <link rel="stylesheet" href="선택.css">
+ 
+  
+    <style>img {width: 130px;}</style>
+
 </head>
+
 <body>
-    <div class="그룹명"><input  type="text" placeholder="그룹명"></div>
-    <div class="그룹설명"><input  type="text"placeholder="그룹설명" > </div><br><br>
-    <div class="그룹명설명"><input  type="text" placeholder="그룹명설명"></div><br><br>
-    <div class="선택된사진모음" style="overflow:auto" id="board"  background-color: black;"></div>
-    <div class="사진삭제"><button onclick="del()">전체삭제</button></div>
-    <div class="사진모음" style="overflow:auto">
-    <div class="걸스데이">
-        <button onclick="make('images/걸스데이/민아.jpg')">
-        <img  src='images/걸스데이/민아.jpg' width="300px"><br>민아</button>
-        <button onclick="make('images/걸스데이/소진.jpg')">
-        <img  src='images/걸스데이/소진.jpg' width="300px"><br>소진</button>
-        <button onclick="make('images/걸스데이/유라.jpg')">
-         <img  src='images/걸스데이/유라.jpg' width="300px"><br>유라</button>
-        <button onclick="make('images/걸스데이/혜리.jpg')">
-        <img  src='images/걸스데이/혜리.jpg' width="300px"><br>혜리</button></div>
-    <div class="뉴진스">
-        <button onclick="make('images/뉴진스/다니엘.jpg')">
-        <img  src='images/뉴진스/다니엘.jpg' width="300px"><br>다니엘</button>
-        <button onclick="make('images/뉴진스/민지.jpg')">
-        <img  src='images/뉴진스/민지.jpg' width="300px"><br>민지</button>
-        <button onclick="make('images/뉴진스/하니.jpg')">
-        <img  src='images/뉴진스/하니.jpg' width="300px"><br>하니</button>
-        <button onclick="make('images/뉴진스/혜린.jpg')">
-        <img  src='images/뉴진스/혜린.jpg' width="300px"><br>혜린</button>
-        <button onclick="make('images/뉴진스/혜인.jpg')">
-        <img  src='images/뉴진스/혜인.jpg' width="300px"><br>혜인</button></div>
-    <div class="레드벨벳">
-        <button onclick="make('images/레드벨벳/슬기.jpg')">
-        <img  src='images/레드벨벳/슬기.jpg' width="300px"><br>슬기</button>
-        <button onclick="make('images/레드벨벳/아이린.jpg')">
-        <img  src='images/레드벨벳/아이린.jpg' width="300px"><br>아이린</button>
-        <button onclick="make('images/레드벨벳/예리.jpg')">
-        <img  src='images/레드벨벳/예리.jpg' width="300px"><br>예리</button>
-        <button onclick="make('images/레드벨벳/웬디.jpg')">
-        <img  src='images/레드벨벳/웬디.jpg' width="300px"><br>웬디</button>
-        <button onclick="make('images/레드벨벳/조이.jpg')">
-        <img  src='images/레드벨벳/조이.jpg' width="300px"><br>조이</button></div>
-    <div class="르세라핌">
-        <button onclick="make('images/르세라핌/김채원.jpg')">
-        <img  src='images/르세라핌/김채원.jpg' width="300px"><br>김채원</button>
-        <button onclick="make('images/르세라핌/사쿠라.jpg')">
-        <img  src='images/르세라핌/사쿠라.jpg' width="300px"><br>사쿠라</button>
-        <button onclick="make('images/르세라핌/카즈하.jpg')">
-        <img  src='images/르세라핌/카즈하.jpg' width="300px"><br>카즈하</button>
-        <button onclick="make('images/르세라핌/허윤진.jpg')">
-        <img  src='images/르세라핌/허윤진.jpg' width="300px"><br>허윤진</button>
-        <button onclick="make('images/르세라핌/홍은채.jpg')">
-        <img  src='images/르세라핌/홍은채.jpg' width="300px"><br>홍은채</button></div>
-    <div class="마마무">
-        <button onclick="make('images/마마무/문별.jpg')">
-        <img  src='images/마마무/문별.jpg' width="300px"><br>문별</button>
-        <button onclick="make('images/마마무/솔라.jpg')">
-        <img  src='images/마마무/솔라.jpg' width="300px"><br>솔라</button>
-        <button onclick="make('images/마마무/화사.jpg')">
-        <img  src='images/마마무/화사.jpg' width="300px"><br>화사</button>
-        <button onclick="make('images/마마무/휘인.jpg')">
-        <img  src='images/마마무/휘인.jpg' width="300px"><br>휘인</button></div>
-    <div class="미스에이">
-        <button onclick="make('images/미스에이/수지.jpg')">
-        <img  src='images/미스에이/수지.jpg' width="300px"><br>수지</button> </div>
-    <div class="블랙핑크">
-        <button onclick="make('images/블랙핑크/로제.jpg')">
-        <img  src='images/블랙핑크/로제.jpg' width="300px"><br>로제</button>
-        <button onclick="make('images/블랙핑크/리사.jpg')">
-        <img  src='images/블랙핑크/리사.jpg' width="300px"><br>리사</button>
-        <button onclick="make('images/블랙핑크/제니.jpg')">
-        <img  src='images/블랙핑크/제니.jpg' width="300px"><br>제니</button>
-        <button onclick="make('images/블랙핑크/지수.jpg')">
-        <img  src='images/블랙핑크/지수.jpg' width="300px"><br>지수</button></div>
-    <div class="스테이씨">
-        <button onclick="make('images/스테이씨/세은.jpg')">
-        <img  src='images/스테이씨/세은.jpg' width="300px"><br>세은</button>
-        <button onclick="make('images/스테이씨/수민.jpg')">
-        <img  src='images/스테이씨/수민.jpg' width="300px"><br>수민</button>
-        <button onclick="make('images/스테이씨/시은.jpg')">
-        <img  src='images/스테이씨/시은.jpg' width="300px"><br>시은</button>
-        <button onclick="make('images/스테이씨/아이사.jpg')">
-        <img  src='images/스테이씨/아이사.jpg' width="300px"><br>아이사</button>
-        <button onclick="make('images/스테이씨/윤.jpg')">
-        <img  src='images/스테이씨/윤.jpg' width="300px"><br>윤</button>
-        <button onclick="make('images/스테이씨/재이.jpg')">
-        <img  src='images/스테이씨/재이.jpg' width="300px"><br>재이</button></div>
-    <div class="씨스타">
-        <button onclick="make('images/씨스타/다솜.jpg')">
-        <img  src='images/씨스타/다솜.jpg' width="300px"><br>다솜</button>
-        <button onclick="make('images/씨스타/보라.jpg')">
-        <img  src='images/씨스타/보라.jpg' width="300px"><br>보라</button>
-        <button onclick="make('images/씨스타/소유.jpg')">
-        <img  src='images/씨스타/소유.jpg' width="300px"><br>소유</button>
-        <button onclick="make('images/씨스타/효린.jpg')">
-        <img  src='images/씨스타/효린.jpg' width="300px"><br>효린</button>
-        </div>
-    <div class="아이브">
-        <button onclick="make('images/아이브/가을.jpg')">
-        <img  src='images/아이브/가을.jpg' width="300px"><br>가을</button>
-        <button onclick="make('images/아이브/레이.jpg')">
-        <img  src='images/아이브/레이.jpg' width="300px"><br>레이</button>
-        <button onclick="make('images/아이브/리즈.jpg')">
-        <img  src='images/아이브/리즈.jpg' width="300px"><br>리즈</button>
-        <button onclick="make('images/아이브/안유진.jpg')">
-        <img  src='images/아이브/안유진.jpg' width="300px"><br>안유진</button>
-        <button onclick="make('images/아이브/이서.jpg')">
-        <img  src='images/아이브/이서.jpg' width="300px"><br>이서</button>
-        <button onclick="make('images/아이브/장원영.jpg')">
-        <img  src='images/아이브/장원영.jpg' width="300px"><br>장원영</button></div>
-    <div class="아이오아이">
-        <button onclick="make('images/아이오아이/강미나.jpg')">
-        <img  src='images/아이오아이/강미나.jpg' width="300px"><br>강미나</button>
-        <button onclick="make('images/아이오아이/김도연.jpg')">
-        <img  src='images/아이오아이/김도연.jpg' width="300px"><br>김도연</button>
-        <button onclick="make('images/아이오아이/김세정.jpg')">
-        <img  src='images/아이오아이/김세정.jpg' width="300px"><br>김세정</button>
-        <button onclick="make('images/아이오아이/김소혜.jpg')">
-        <img  src='images/아이오아이/김소혜.jpg' width="300px"><br>김소혜</button>
-        <button onclick="make('images/아이오아이/유연정.jpg')">
-        <img  src='images/아이오아이/유연정.jpg' width="300px"><br>유연정</button>
-        <button onclick="make('images/아이오아이/임나영.jpg')">
-        <img  src='images/아이오아이/임나영.jpg' width="300px"><br>임나영</button>
-        <button onclick="make('images/아이오아이/전소미.jpg')">
-        <img  src='images/아이오아이/전소미.jpg' width="300px"><br>전소미</button>
-        <button onclick="make('images/아이오아이/정채연.jpg')">
-        <img  src='images/아이오아이/정채연.jpg' width="300px"><br>정채연</button>
-        <button onclick="make('images/아이오아이/주결경.jpg')">
-        <img  src='images/아이오아이/주결경.jpg' width="300px"><br>주결경</button>
-        <button onclick="make('images/아이오아이/청하.jpg')">
-        <img  src='images/아이오아이/청하.jpg' width="300px"><br>청하</button>
-        <button onclick="make('images/아이오아이/최유정.jpg')">
-        <img  src='images/아이오아이/최유정.jpg' width="300px"><br>최유정</button></div>
-    <div class="아이즈원">
-        <button onclick="make('images/아이즈원/강혜원.jpg')">
-        <img  src='images/아이즈원/강혜원.jpg' width="300px"><br>강혜원</button>
-        <button onclick="make('images/아이즈원/권은비.jpg')">
-        <img  src='images/아이즈원/권은비.jpg' width="300px"><br>권은비</button>
-        <button onclick="make('images/아이즈원/김민주.jpg')">
-        <img  src='images/아이즈원/김민주.jpg' width="300px"><br>김민주</button>
-        <button onclick="make('images/아이즈원/김채원.jpg')">
-        <img  src='images/아이즈원/김채원.jpg' width="300px"><br>김채원</button>
-        <button onclick="make('images/아이즈원/나코.jpg')">
-        <img  src='images/아이즈원/나코.jpg' width="300px"><br>나코</button>
-        <button onclick="make('images/아이즈원/사쿠라.jpg')">
-        <img  src='images/아이즈원/사쿠라.jpg' width="300px"><br>사쿠라</button>
-        <button onclick="make('images/아이즈원/안유진.jpg')">
-        <img  src='images/아이즈원/안유진.jpg' width="300px"><br>안유진</button>
-        <button onclick="make('images/아이즈원/이채연.jpg')">
-        <img  src='images/아이즈원/이채연.jpg' width="300px"><br>이채연</button>
-        <button onclick="make('images/아이즈원/장원영.jpg')">
-        <img  src='images/아이즈원/장원영.jpg' width="300px"><br>장원영</button>
-        <button onclick="make('images/아이즈원/조유리.jpg')">
-        <img  src='images/아이즈원/조유리.jpg' width="300px"><br>조유리</button>
-        <button onclick="make('images/아이즈원/최예나.jpg')">
-        <img  src='images/아이즈원/최예나.jpg' width="300px"><br>최예나</button>
-        <button onclick="make('images/아이즈원/히토미.jpg')">
-        <img  src='images/아이즈원/히토미.jpg' width="300px"><br>히토미</button></div>
-    <div class="에스파">
-        <button onclick="make('images/에스파/닝닝.jpg')">
-        <img  src='images/에스파/닝닝.jpg' width="300px"><br>닝닝</button>
-        <button onclick="make('images/에스파/윈터.jpg')">
-        <img  src='images/에스파/윈터.jpg' width="300px"><br>윈터</button>
-        <button onclick="make('images/에스파/지젤.jpg')">
-        <img  src='images/에스파/지젤.jpg' width="300px"><br>지젤</button>
-        <button onclick="make('images/에스파/카리나.jpg')">
-        <img  src='images/에스파/카리나.jpg' width="300px"><br>카리나</button></div>
-    <div class="에이오에이">
-        <button onclick="make('images/에이오에이/설현.jpg')">
-        <img  src='images/에이오에이/설현.jpg' width="300px"><br>설현</button>
-        <button onclick="make('images/에이오에이/유나.jpg')">
-        <img  src='images/에이오에이/유나.jpg' width="300px"><br>유나</button>
-        <button onclick="make('images/에이오에이/찬미.jpg')">
-        <img  src='images/에이오에이/찬미.jpg' width="300px"><br>찬미</button>
-        <button onclick="make('images/에이오에이/초아.jpg')">
-        <img  src='images/에이오에이/초아.jpg' width="300px"><br>초아</button>
-        <button onclick="make('images/에이오에이/혜정.jpg')">
-        <img  src='images/에이오에이/혜정.jpg' width="300px"><br>혜정</button></div>
-    <div class="에이핑크">
-        <button onclick="make('images/에이핑크/김남주.jpg')">
-        <img  src='images/에이핑크/김남주.jpg' width="300px"><br>김남주</button>
-        <button onclick="make('images/에이핑크/박초롱.jpg')">
-        <img  src='images/에이핑크/박초롱.jpg' width="300px"><br>박초롱</button>
-        <button onclick="make('images/에이핑크/손나은.jpg')">
-        <img  src='images/에이핑크/손나은.jpg' width="300px"><br>손나은</button>
-        <button onclick="make('images/에이핑크/오하영.jpg')">
-        <img  src='images/에이핑크/오하영.jpg' width="300px"><br>오하영</button>
-        <button onclick="make('images/에이핑크/윤보미.jpg')">
-        <img  src='images/에이핑크/윤보미.jpg' width="300px"><br>윤보미</button>
-        <button onclick="make('images/에이핑크/정은지.jpg')">
-        <img  src='images/에이핑크/정은지.jpg' width="300px"><br>정은지</button></div>
-    <div class="여자아이들">
-        <button onclick="make('images/여자아이들/미연.jpg')">
-        <img  src='images/여자아이들/미연.jpg' width="300px"><br>미연</button>
-        <button onclick="make('images/여자아이들/민니.jpg')">
-        <img  src='images/여자아이들/민니.jpg' width="300px"><br>민니</button>
-        <button onclick="make('images/여자아이들/슈화.jpg')">
-        <img  src='images/여자아이들/슈화.jpg' width="300px"><br>슈화</button>
-        <button onclick="make('images/여자아이들/우기.jpg')">
-        <img  src='images/여자아이들/우기.jpg' width="300px"><br>우기</button>
-        <button onclick="make('images/여자아이들/전소연.jpg')">
-        <img  src='images/여자아이들/전소연.jpg' width="300px"><br>전소연</button></div>
-    <div class="여자친구">
-        <button onclick="make('images/여자친구/소원.jpg')">
-        <img  src='images/여자친구/소원.jpg' width="300px"><br>소원</button>
-        <button onclick="make('images/여자친구/신비.jpg')">
-        <img  src='images/여자친구/신비.jpg' width="300px"><br>신비</button>
-        <button onclick="make('images/여자친구/엄지.jpg')">
-        <img  src='images/여자친구/엄지.jpg' width="300px"><br>엄지</button>
-        <button onclick="make('images/여자친구/예린.jpg')">
-        <img  src='images/여자친구/예린.jpg' width="300px"><br>예린</button>
-        <button onclick="make('images/여자친구/유주.jpg')">
-        <img  src='images/여자친구/유주.jpg' width="300px"><br>유주</button>
-        <button onclick="make('images/여자친구/은하.jpg')">
-        <img  src='images/여자친구/은하.jpg' width="300px"><br>은하</button></div>
-    <div class="오마이걸">
-        <button onclick="make('images/오마이걸/미미.jpg')">
-        <img  src='images/오마이걸/미미.jpg' width="300px"><br>미미</button>
-        <button onclick="make('images/오마이걸/비니.jpg')">
-        <img  src='images/오마이걸/비니.jpg' width="300px"><br>비니</button>
-        <button onclick="make('images/오마이걸/승희.jpg')">
-        <img  src='images/오마이걸/승희.jpg' width="300px"><br>승희</button>
-        <button onclick="make('images/오마이걸/아린.jpg')">
-        <img  src='images/오마이걸/아린.jpg' width="300px"><br>아린</button>
-        <button onclick="make('images/오마이걸/유아.jpg')">
-        <img  src='images/오마이걸/유아.jpg' width="300px"><br>유아</button>
-        <button onclick="make('images/오마이걸/지호.jpg')">
-        <img  src='images/오마이걸/지호.jpg' width="300px"><br>지호</button>
-        <button onclick="make('images/오마이걸/효정.jpg')">
-        <img  src='images/오마이걸/효정.jpg' width="300px"><br>효정</button></div>
-    <div class="이엑스아이디">
-        <button onclick="make('images/이엑스아이디/솔지.jpg')">
-        <img  src='images/이엑스아이디/솔지.jpg' width="300px"><br>솔지</button>
-        <button onclick="make('images/이엑스아이디/엘이.jpg')">
-        <img  src='images/이엑스아이디/엘이.jpg' width="300px"><br>엘이</button>
-        <button onclick="make('images/이엑스아이디/정화.jpg')">
-        <img  src='images/이엑스아이디/정화.jpg' width="300px"><br>정화</button>
-        <button onclick="make('images/이엑스아이디/하니.jpg')">
-        <img  src='images/이엑스아이디/하니.jpg' width="300px"><br>하니</button>
-        <button onclick="make('images/이엑스아이디/혜린.jpg')">
-        <img  src='images/이엑스아이디/혜린.jpg' width="300px"><br>혜린</button></div>
-    <div class="있지">
-        <button onclick="make('images/있지/류진.jpg')">
-        <img  src='images/있지/류진.jpg' width="300px"><br>류진</button>
-        <button onclick="make('images/있지/리아.jpg')">
-        <img  src='images/있지/리아.jpg' width="300px"><br>리아</button>
-        <button onclick="make('images/있지/예지.jpg')">
-        <img  src='images/있지/예지.jpg' width="300px"><br>예지</button>
-        <button onclick="make('images/있지/유나.jpg')">
-        <img  src='images/있지/유나.jpg' width="300px"><br>유나</button>
-        <button onclick="make('images/있지/채령.jpg')">
-        <img  src='images/있지/채령.jpg' width="300px"><br>채령</button></div>
-    <div class="트와이스">
-        <button onclick="make('images/트와이스/나연.jpg')">
-        <img  src='images/트와이스/나연.jpg' width="300px"><br>나연</button>
-        <button onclick="make('images/트와이스/다현.jpg')">
-        <img  src='images/트와이스/다현.jpg' width="300px"><br>다현</button>
-        <button onclick="make('images/트와이스/모모.jpg')">
-        <img  src='images/트와이스/모모.jpg' width="300px"><br>모모</button>
-        <button onclick="make('images/트와이스/미나.jpg')">
-        <img  src='images/트와이스/미나.jpg' width="300px"><br>미나</button>
-        <button onclick="make('images/트와이스/사나.jpg')">
-        <img  src='images/트와이스/사나.jpg' width="300px"><br>사나</button>
-        <button onclick="make('images/트와이스/정연.jpg')">
-        <img  src='images/트와이스/정연.jpg' width="300px"><br>정연</button>
-        <button onclick="make('images/트와이스/지효.jpg')">
-        <img  src='images/트와이스/지효.jpg' width="300px"><br>지효</button>
-        <button onclick="make('images/트와이스/쯔위.jpg')">
-        <img  src='images/트와이스/쯔위.jpg' width="300px"><br>쯔위</button>
-        <button onclick="make('images/트와이스/채영.jpg')">
-        <img  src='images/트와이스/채영.jpg' width="300px"><br>채영</button></div>
-
-
-           
+    
+    <div class="선택된사진모음" style="overflow:auto" id="board" background-color: black;"></div>
+    <div class="사진삭제">
+        <button onclick="del()" class="전체삭제그룹저장">전체삭제</button>
+        <button class="전체삭제그룹저장" onclick="그룹저장()">그룹저장</button>
+    </div>
+    <div>
+        <input type="text" class="찾기" placeholder="그룹명,맴버이름"><button>검색</button>
+        <select class="select">
+            <option>분류</option>
+            
+            <option >그룹 가나다순</option>
+            <option >그룹 데뷔년도</option>
+            <option >개인 가나다순</option>
+        </select>
 
 
     </div>
+    <div class="사진모음1" style="overflow:auto ">
+        <div class="칸분활">
+            <h4>걸스데이</h4>
+            <div class="걸스데이">
+                <button onclick="make('images/걸스데이/민아.jpg')">
+                    <img src='images/걸스데이/민아.jpg' width="300px"><br>민아</button>
+                <button onclick="make('images/걸스데이/소진.jpg')">
+                    <img src='images/걸스데이/소진.jpg' width="300px"><br>소진</button>
+                <button onclick="make('images/걸스데이/유라.jpg')">
+                    <img src='images/걸스데이/유라.jpg' width="300px"><br>유라</button>
+                <button onclick="make('images/걸스데이/혜리.jpg')">
+                    <img src='images/걸스데이/혜리.jpg' width="300px"><br>혜리</button>
+            </div>
+        </div>
+        <div class="칸분활">
+            <h4>뉴진스</h4>
+            <div class="뉴진스">
+                <button onclick="make('images/뉴진스/다니엘.jpg')">
+                    <img src='images/뉴진스/다니엘.jpg' width="300px"><br>다니엘</button>
+                <button onclick="make('images/뉴진스/민지.jpg')">
+                    <img src='images/뉴진스/민지.jpg' width="300px"><br>민지</button>
+                <button onclick="make('images/뉴진스/하니.jpg')">
+                    <img src='images/뉴진스/하니.jpg' width="300px"><br>하니</button>
+                <button onclick="make('images/뉴진스/혜린.jpg')">
+                    <img src='images/뉴진스/혜린.jpg' width="300px"><br>혜린</button>
+                <button onclick="make('images/뉴진스/혜인.jpg')">
+                    <img src='images/뉴진스/혜인.jpg' width="300px"><br>혜인</button>
+            </div>
+        </div>
+        <div class="칸분활">
+            <h4>레드벨벳</h4>
+            <div class="레드벨벳">
+                <button onclick="make('images/레드벨벳/슬기.jpg')">
+                    <img src='images/레드벨벳/슬기.jpg' width="300px"><br>슬기</button>
+                <button onclick="make('images/레드벨벳/아이린.jpg')">
+                    <img src='images/레드벨벳/아이린.jpg' width="300px"><br>아이린</button>
+                <button onclick="make('images/레드벨벳/예리.jpg')">
+                    <img src='images/레드벨벳/예리.jpg' width="300px"><br>예리</button>
+                <button onclick="make('images/레드벨벳/웬디.jpg')">
+                    <img src='images/레드벨벳/웬디.jpg' width="300px"><br>웬디</button>
+                <button onclick="make('images/레드벨벳/조이.jpg')">
+                    <img src='images/레드벨벳/조이.jpg' width="300px"><br>조이</button>
+            </div>
+        </div>
+        <div class="칸분활">
+            <h4>르세라핌</h4>
+            <div class="르세라핌">
+                <button onclick="make('images/르세라핌/김채원.jpg')">
+                    <img src='images/르세라핌/김채원.jpg' width="300px"><br>김채원</button>
+                <button onclick="make('images/르세라핌/사쿠라.jpg')">
+                    <img src='images/르세라핌/사쿠라.jpg' width="300px"><br>사쿠라</button>
+                <button onclick="make('images/르세라핌/카즈하.jpg')">
+                    <img src='images/르세라핌/카즈하.jpg' width="300px"><br>카즈하</button>
+                <button onclick="make('images/르세라핌/허윤진.jpg')">
+                    <img src='images/르세라핌/허윤진.jpg' width="300px"><br>허윤진</button>
+                <button onclick="make('images/르세라핌/홍은채.jpg')">
+                    <img src='images/르세라핌/홍은채.jpg' width="300px"><br>홍은채</button>
+            </div>
+        </div>
+        <div class="칸분활">
+            <h4>마마무</h4>
+            <div class="마마무">
+                <button onclick="make('images/마마무/문별.jpg')">
+                    <img src='images/마마무/문별.jpg' width="300px"><br>문별</button>
+                <button onclick="make('images/마마무/솔라.jpg')">
+                    <img src='images/마마무/솔라.jpg' width="300px"><br>솔라</button>
+                <button onclick="make('images/마마무/화사.jpg')">
+                    <img src='images/마마무/화사.jpg' width="300px"><br>화사</button>
+                <button onclick="make('images/마마무/휘인.jpg')">
+                    <img src='images/마마무/휘인.jpg' width="300px"><br>휘인</button>
+            </div>
+        </div>
+        <div class="칸분활">
+            <h4>미스에이</h4>
+            <div class="미스에이">
+                <button onclick="make('images/미스에이/수지.jpg')">
+                    <img src='images/미스에이/수지.jpg' width="300px"><br>수지</button>
+            </div>
+        </div>
+        <div class="칸분활">
+            <h4>블랙핑크</h4>
+            <div class="블랙핑크">
+                <button onclick="make('images/블랙핑크/로제.jpg')">
+                    <img src='images/블랙핑크/로제.jpg' width="300px"><br>로제</button>
+                <button onclick="make('images/블랙핑크/리사.jpg')">
+                    <img src='images/블랙핑크/리사.jpg' width="300px"><br>리사</button>
+                <button onclick="make('images/블랙핑크/제니.jpg')">
+                    <img src='images/블랙핑크/제니.jpg' width="300px"><br>제니</button>
+                <button onclick="make('images/블랙핑크/지수.jpg')">
+                    <img src='images/블랙핑크/지수.jpg' width="300px"><br>지수</button>
+            </div>
+        </div>
+        <div class="칸분활">
+            <h4>스테이씨</h4>
+            <div class="스테이씨">
+                <button onclick="make('images/스테이씨/세은.jpg')">
+                    <img src='images/스테이씨/세은.jpg' width="300px"><br>세은</button>
+                <button onclick="make('images/스테이씨/수민.jpg')">
+                    <img src='images/스테이씨/수민.jpg' width="300px"><br>수민</button>
+                <button onclick="make('images/스테이씨/시은.jpg')">
+                    <img src='images/스테이씨/시은.jpg' width="300px"><br>시은</button>
+                <button onclick="make('images/스테이씨/아이사.jpg')">
+                    <img src='images/스테이씨/아이사.jpg' width="300px"><br>아이사</button>
+                <button onclick="make('images/스테이씨/윤.jpg')">
+                    <img src='images/스테이씨/윤.jpg' width="300px"><br>윤</button>
+                <button onclick="make('images/스테이씨/재이.jpg')">
+                    <img src='images/스테이씨/재이.jpg' width="300px"><br>재이</button>
+            </div>
+        </div>
+        <div class="칸분활">
+            <h4>씨스타</h4>
+            <div class="씨스타">
+                <button onclick="make('images/씨스타/다솜.jpg')">
+                    <img src='images/씨스타/다솜.jpg' width="300px"><br>다솜</button>
+                <button onclick="make('images/씨스타/보라.jpg')">
+                    <img src='images/씨스타/보라.jpg' width="300px"><br>보라</button>
+                <button onclick="make('images/씨스타/소유.jpg')">
+                    <img src='images/씨스타/소유.jpg' width="300px"><br>소유</button>
+                <button onclick="make('images/씨스타/효린.jpg')">
+                    <img src='images/씨스타/효린.jpg' width="300px"><br>효린</button>
+            </div>
+        </div>
+        <div class="칸분활">
+            <h4>아이브</h4>
+            <div class="아이브">
+                <button onclick="make('images/아이브/가을.jpg')">
+                    <img src='images/아이브/가을.jpg' width="300px"><br>가을</button>
+                <button onclick="make('images/아이브/레이.jpg')">
+                    <img src='images/아이브/레이.jpg' width="300px"><br>레이</button>
+                <button onclick="make('images/아이브/리즈.jpg')">
+                    <img src='images/아이브/리즈.jpg' width="300px"><br>리즈</button>
+                <button onclick="make('images/아이브/안유진.jpg')">
+                    <img src='images/아이브/안유진.jpg' width="300px"><br>안유진</button>
+                <button onclick="make('images/아이브/이서.jpg')">
+                    <img src='images/아이브/이서.jpg' width="300px"><br>이서</button>
+                <button onclick="make('images/아이브/장원영.jpg')">
+                    <img src='images/아이브/장원영.jpg' width="300px"><br>장원영</button>
+            </div>
+        </div>
+        <div class="칸분활">
+            <h4>아이오아이</h4>
+            <div class="아이오아이">
+                <button onclick="make('images/아이오아이/강미나.jpg')">
+                    <img src='images/아이오아이/강미나.jpg' width="300px"><br>강미나</button>
+                <button onclick="make('images/아이오아이/김도연.jpg')">
+                    <img src='images/아이오아이/김도연.jpg' width="300px"><br>김도연</button>
+                <button onclick="make('images/아이오아이/김세정.jpg')">
+                    <img src='images/아이오아이/김세정.jpg' width="300px"><br>김세정</button>
+                <button onclick="make('images/아이오아이/김소혜.jpg')">
+                    <img src='images/아이오아이/김소혜.jpg' width="300px"><br>김소혜</button>
+                <button onclick="make('images/아이오아이/유연정.jpg')">
+                    <img src='images/아이오아이/유연정.jpg' width="300px"><br>유연정</button>
+                <button onclick="make('images/아이오아이/임나영.jpg')">
+                    <img src='images/아이오아이/임나영.jpg' width="300px"><br>임나영</button>
+                <button onclick="make('images/아이오아이/전소미.jpg')">
+                    <img src='images/아이오아이/전소미.jpg' width="300px"><br>전소미</button>
+                <button onclick="make('images/아이오아이/정채연.jpg')">
+                    <img src='images/아이오아이/정채연.jpg' width="300px"><br>정채연</button>
+                <button onclick="make('images/아이오아이/주결경.jpg')">
+                    <img src='images/아이오아이/주결경.jpg' width="300px"><br>주결경</button>
+                <button onclick="make('images/아이오아이/청하.jpg')">
+                    <img src='images/아이오아이/청하.jpg' width="300px"><br>청하</button>
+                <button onclick="make('images/아이오아이/최유정.jpg')">
+                    <img src='images/아이오아이/최유정.jpg' width="300px"><br>최유정</button>
+            </div>
+        </div>
+        <div class="칸분활">
+            <h4>아이즈원</h4>
+            <div class="아이즈원">
+                <button onclick="make('images/아이즈원/강혜원.jpg')">
+                    <img src='images/아이즈원/강혜원.jpg' width="300px"><br>강혜원</button>
+                <button onclick="make('images/아이즈원/권은비.jpg')">
+                    <img src='images/아이즈원/권은비.jpg' width="300px"><br>권은비</button>
+                <button onclick="make('images/아이즈원/김민주.jpg')">
+                    <img src='images/아이즈원/김민주.jpg' width="300px"><br>김민주</button>
+                <button onclick="make('images/아이즈원/김채원.jpg')">
+                    <img src='images/아이즈원/김채원.jpg' width="300px"><br>김채원</button>
+                <button onclick="make('images/아이즈원/나코.jpg')">
+                    <img src='images/아이즈원/나코.jpg' width="300px"><br>나코</button>
+                <button onclick="make('images/아이즈원/사쿠라.jpg')">
+                    <img src='images/아이즈원/사쿠라.jpg' width="300px"><br>사쿠라</button>
+                <button onclick="make('images/아이즈원/안유진.jpg')">
+                    <img src='images/아이즈원/안유진.jpg' width="300px"><br>안유진</button>
+                <button onclick="make('images/아이즈원/이채연.jpg')">
+                    <img src='images/아이즈원/이채연.jpg' width="300px"><br>이채연</button>
+                <button onclick="make('images/아이즈원/장원영.jpg')">
+                    <img src='images/아이즈원/장원영.jpg' width="300px"><br>장원영</button>
+                <button onclick="make('images/아이즈원/조유리.jpg')">
+                    <img src='images/아이즈원/조유리.jpg' width="300px"><br>조유리</button>
+                <button onclick="make('images/아이즈원/최예나.jpg')">
+                    <img src='images/아이즈원/최예나.jpg' width="300px"><br>최예나</button>
+                <button onclick="make('images/아이즈원/히토미.jpg')">
+                    <img src='images/아이즈원/히토미.jpg' width="300px"><br>히토미</button>
+            </div>
+        </div>
+        <div class="칸분활">
+            <h4>에스파</h4>
+            <div class="에스파">
+                <button onclick="make('images/에스파/닝닝.jpg')">
+                    <img src='images/에스파/닝닝.jpg' width="300px"><br>닝닝</button>
+                <button onclick="make('images/에스파/윈터.jpg')">
+                    <img src='images/에스파/윈터.jpg' width="300px"><br>윈터</button>
+                <button onclick="make('images/에스파/지젤.jpg')">
+                    <img src='images/에스파/지젤.jpg' width="300px"><br>지젤</button>
+                <button onclick="make('images/에스파/카리나.jpg')">
+                    <img src='images/에스파/카리나.jpg' width="300px"><br>카리나</button>
+            </div>
+        </div>
+        <div class="칸분활">
+            <h4>에이오에이</h4>
+            <div class="에이오에이">
+                <button onclick="make('images/에이오에이/설현.jpg')">
+                    <img src='images/에이오에이/설현.jpg' width="300px"><br>설현</button>
+                <button onclick="make('images/에이오에이/유나.jpg')">
+                    <img src='images/에이오에이/유나.jpg' width="300px"><br>유나</button>
+                <button onclick="make('images/에이오에이/찬미.jpg')">
+                    <img src='images/에이오에이/찬미.jpg' width="300px"><br>찬미</button>
+                <button onclick="make('images/에이오에이/초아.jpg')">
+                    <img src='images/에이오에이/초아.jpg' width="300px"><br>초아</button>
+                <button onclick="make('images/에이오에이/혜정.jpg')">
+                    <img src='images/에이오에이/혜정.jpg' width="300px"><br>혜정</button>
+            </div>
+        </div>
+        <div class="칸분활">
+            <h4>에이핑크</h4>
+            <div class="에이핑크">
+                <button onclick="make('images/에이핑크/김남주.jpg')">
+                    <img src='images/에이핑크/김남주.jpg' width="300px"><br>김남주</button>
+                <button onclick="make('images/에이핑크/박초롱.jpg')">
+                    <img src='images/에이핑크/박초롱.jpg' width="300px"><br>박초롱</button>
+                <button onclick="make('images/에이핑크/손나은.jpg')">
+                    <img src='images/에이핑크/손나은.jpg' width="300px"><br>손나은</button>
+                <button onclick="make('images/에이핑크/오하영.jpg')">
+                    <img src='images/에이핑크/오하영.jpg' width="300px"><br>오하영</button>
+                <button onclick="make('images/에이핑크/윤보미.jpg')">
+                    <img src='images/에이핑크/윤보미.jpg' width="300px"><br>윤보미</button>
+                <button onclick="make('images/에이핑크/정은지.jpg')">
+                    <img src='images/에이핑크/정은지.jpg' width="300px"><br>정은지</button>
+            </div>
+        </div>
+        <div class="칸분활">
+            <h4>여자아이들</h4>
+            <div class="여자아이들">
+                <button onclick="make('images/여자아이들/미연.jpg')">
+                    <img src='images/여자아이들/미연.jpg' width="300px"><br>미연</button>
+                <button onclick="make('images/여자아이들/민니.jpg')">
+                    <img src='images/여자아이들/민니.jpg' width="300px"><br>민니</button>
+                <button onclick="make('images/여자아이들/슈화.jpg')">
+                    <img src='images/여자아이들/슈화.jpg' width="300px"><br>슈화</button>
+                <button onclick="make('images/여자아이들/우기.jpg')">
+                    <img src='images/여자아이들/우기.jpg' width="300px"><br>우기</button>
+                <button onclick="make('images/여자아이들/전소연.jpg')">
+                    <img src='images/여자아이들/전소연.jpg' width="300px"><br>전소연</button>
+            </div>
+        </div>
+        <div class="칸분활">
+            <h4>여자친구</h4>
+            <div class="여자친구">
+                <button onclick="make('images/여자친구/소원.jpg')">
+                    <img src='images/여자친구/소원.jpg' width="300px"><br>소원</button>
+                <button onclick="make('images/여자친구/신비.jpg')">
+                    <img src='images/여자친구/신비.jpg' width="300px"><br>신비</button>
+                <button onclick="make('images/여자친구/엄지.jpg')">
+                    <img src='images/여자친구/엄지.jpg' width="300px"><br>엄지</button>
+                <button onclick="make('images/여자친구/예린.jpg')">
+                    <img src='images/여자친구/예린.jpg' width="300px"><br>예린</button>
+                <button onclick="make('images/여자친구/유주.jpg')">
+                    <img src='images/여자친구/유주.jpg' width="300px"><br>유주</button>
+                <button onclick="make('images/여자친구/은하.jpg')">
+                    <img src='images/여자친구/은하.jpg' width="300px"><br>은하</button>
+            </div>
+        </div>
+        <div class="칸분활">
+            <h4>오마이걸</h4>
+            <div class="오마이걸">
+                <button onclick="make('images/오마이걸/미미.jpg')">
+                    <img src='images/오마이걸/미미.jpg' width="300px"><br>미미</button>
+                <button onclick="make('images/오마이걸/비니.jpg')">
+                    <img src='images/오마이걸/비니.jpg' width="300px"><br>비니</button>
+                <button onclick="make('images/오마이걸/승희.jpg')">
+                    <img src='images/오마이걸/승희.jpg' width="300px"><br>승희</button>
+                <button onclick="make('images/오마이걸/아린.jpg')">
+                    <img src='images/오마이걸/아린.jpg' width="300px"><br>아린</button>
+                <button onclick="make('images/오마이걸/유아.jpg')">
+                    <img src='images/오마이걸/유아.jpg' width="300px"><br>유아</button>
+                <button onclick="make('images/오마이걸/지호.jpg')">
+                    <img src='images/오마이걸/지호.jpg' width="300px"><br>지호</button>
+                <button onclick="make('images/오마이걸/효정.jpg')">
+                    <img src='images/오마이걸/효정.jpg' width="300px"><br>효정</button>
+            </div>
+        </div>
+        <div class="칸분활">
+            <h4>이엑스아이디</h4>
+            <div class="이엑스아이디">
+                <button onclick="make('images/이엑스아이디/솔지.jpg')">
+                    <img src='images/이엑스아이디/솔지.jpg' width="300px"><br>솔지</button>
+                <button onclick="make('images/이엑스아이디/엘이.jpg')">
+                    <img src='images/이엑스아이디/엘이.jpg' width="300px"><br>엘이</button>
+                <button onclick="make('images/이엑스아이디/정화.jpg')">
+                    <img src='images/이엑스아이디/정화.jpg' width="300px"><br>정화</button>
+                <button onclick="make('images/이엑스아이디/하니.jpg')">
+                    <img src='images/이엑스아이디/하니.jpg' width="300px"><br>하니</button>
+                <button onclick="make('images/이엑스아이디/혜린.jpg')">
+                    <img src='images/이엑스아이디/혜린.jpg' width="300px"><br>혜린</button>
+            </div>
+        </div>
+        <div class="칸분활">
+            <h4>있지</h4>
+            <div class="있지">
+                <button onclick="make('images/있지/류진.jpg')">
+                    <img src='images/있지/류진.jpg' width="300px"><br>류진</button>
+                <button onclick="make('images/있지/리아.jpg')">
+                    <img src='images/있지/리아.jpg' width="300px"><br>리아</button>
+                <button onclick="make('images/있지/예지.jpg')">
+                    <img src='images/있지/예지.jpg' width="300px"><br>예지</button>
+                <button onclick="make('images/있지/유나.jpg')">
+                    <img src='images/있지/유나.jpg' width="300px"><br>유나</button>
+                <button onclick="make('images/있지/채령.jpg')">
+                    <img src='images/있지/채령.jpg' width="300px"><br>채령</button>
+            </div>
+        </div>
+        <div class="칸분활">
+            <h4>트와이스</h4>
+            <div class="트와이스">
+                <button onclick="make('images/트와이스/나연.jpg')">
+                    <img src='images/트와이스/나연.jpg' width="300px"><br>나연</button>
+                <button onclick="make('images/트와이스/다현.jpg')">
+                    <img src='images/트와이스/다현.jpg' width="300px"><br>다현</button>
+                <button onclick="make('images/트와이스/모모.jpg')">
+                    <img src='images/트와이스/모모.jpg' width="300px"><br>모모</button>
+                <button onclick="make('images/트와이스/미나.jpg')">
+                    <img src='images/트와이스/미나.jpg' width="300px"><br>미나</button>
+                <button onclick="make('images/트와이스/사나.jpg')">
+                    <img src='images/트와이스/사나.jpg' width="300px"><br>사나</button>
+                <button onclick="make('images/트와이스/정연.jpg')">
+                    <img src='images/트와이스/정연.jpg' width="300px"><br>정연</button>
+                <button onclick="make('images/트와이스/지효.jpg')">
+                    <img src='images/트와이스/지효.jpg' width="300px"><br>지효</button>
+                <button onclick="make('images/트와이스/쯔위.jpg')">
+                    <img src='images/트와이스/쯔위.jpg' width="300px"><br>쯔위</button>
+                <button onclick="make('images/트와이스/채영.jpg')">
+                    <img src='images/트와이스/채영.jpg' width="300px"><br>채영</button>
+            </div>
+        </div>
+    </div>
+    <div class="사진모음2" style="overflow:auto ">
+        <h3> 2022~2020 데뷔
+            <div class="칸분활">
+                <h4>뉴진스</h4>
+                <div class="뉴진스">
+                    <button onclick="make('images/뉴진스/다니엘.jpg')">
+                        <img src='images/뉴진스/다니엘.jpg' width="300px"><br>다니엘</button>
+                    <button onclick="make('images/뉴진스/민지.jpg')">
+                        <img src='images/뉴진스/민지.jpg' width="300px"><br>민지</button>
+                    <button onclick="make('images/뉴진스/하니.jpg')">
+                        <img src='images/뉴진스/하니.jpg' width="300px"><br>하니</button>
+                    <button onclick="make('images/뉴진스/혜린.jpg')">
+                        <img src='images/뉴진스/혜린.jpg' width="300px"><br>혜린</button>
+                    <button onclick="make('images/뉴진스/혜인.jpg')">
+                        <img src='images/뉴진스/혜인.jpg' width="300px"><br>혜인</button>
+                </div>
+            </div>
+            <div class="칸분활">
+                <h4>르세라핌</h4>
+                <div class="르세라핌">
+                    <button onclick="make('images/르세라핌/김채원.jpg')">
+                        <img src='images/르세라핌/김채원.jpg' width="300px"><br>김채원</button>
+                    <button onclick="make('images/르세라핌/사쿠라.jpg')">
+                        <img src='images/르세라핌/사쿠라.jpg' width="300px"><br>사쿠라</button>
+                    <button onclick="make('images/르세라핌/카즈하.jpg')">
+                        <img src='images/르세라핌/카즈하.jpg' width="300px"><br>카즈하</button>
+                    <button onclick="make('images/르세라핌/허윤진.jpg')">
+                        <img src='images/르세라핌/허윤진.jpg' width="300px"><br>허윤진</button>
+                    <button onclick="make('images/르세라핌/홍은채.jpg')">
+                        <img src='images/르세라핌/홍은채.jpg' width="300px"><br>홍은채</button>
+                </div>
+            </div>
+            <div class="칸분활">
+                <h4>아이브</h4>
+                <div class="아이브">
+                    <button onclick="make('images/아이브/가을.jpg')">
+                        <img src='images/아이브/가을.jpg' width="300px"><br>가을</button>
+                    <button onclick="make('images/아이브/레이.jpg')">
+                        <img src='images/아이브/레이.jpg' width="300px"><br>레이</button>
+                    <button onclick="make('images/아이브/리즈.jpg')">
+                        <img src='images/아이브/리즈.jpg' width="300px"><br>리즈</button>
+                    <button onclick="make('images/아이브/안유진.jpg')">
+                        <img src='images/아이브/안유진.jpg' width="300px"><br>안유진</button>
+                    <button onclick="make('images/아이브/이서.jpg')">
+                        <img src='images/아이브/이서.jpg' width="300px"><br>이서</button>
+                    <button onclick="make('images/아이브/장원영.jpg')">
+                        <img src='images/아이브/장원영.jpg' width="300px"><br>장원영</button>
+                </div>
+            </div>
+            <div class="칸분활">
+                <h4>에스파</h4>
+                <div class="에스파">
+                    <button onclick="make('images/에스파/닝닝.jpg')">
+                        <img src='images/에스파/닝닝.jpg' width="300px"><br>닝닝</button>
+                    <button onclick="make('images/에스파/윈터.jpg')">
+                        <img src='images/에스파/윈터.jpg' width="300px"><br>윈터</button>
+                    <button onclick="make('images/에스파/지젤.jpg')">
+                        <img src='images/에스파/지젤.jpg' width="300px"><br>지젤</button>
+                    <button onclick="make('images/에스파/카리나.jpg')">
+                        <img src='images/에스파/카리나.jpg' width="300px"><br>카리나</button>
+                </div>
+            </div>
+            <div class="칸분활">
+                <h4>스테이씨</h4>
+                <div class="스테이씨">
+                    <button onclick="make('images/스테이씨/세은.jpg')">
+                        <img src='images/스테이씨/세은.jpg' width="300px"><br>세은</button>
+                    <button onclick="make('images/스테이씨/수민.jpg')">
+                        <img src='images/스테이씨/수민.jpg' width="300px"><br>수민</button>
+                    <button onclick="make('images/스테이씨/시은.jpg')">
+                        <img src='images/스테이씨/시은.jpg' width="300px"><br>시은</button>
+                    <button onclick="make('images/스테이씨/아이사.jpg')">
+                        <img src='images/스테이씨/아이사.jpg' width="300px"><br>아이사</button>
+                    <button onclick="make('images/스테이씨/윤.jpg')">
+                        <img src='images/스테이씨/윤.jpg' width="300px"><br>윤</button>
+                    <button onclick="make('images/스테이씨/재이.jpg')">
+                        <img src='images/스테이씨/재이.jpg' width="300px"><br>재이</button>
+                </div>
+            </div>
+        </h3>
+        <h3>2019~2016데뷔
+            <div class="칸분활">
+
+                <h4>있지</h4>
+                <div class="있지">
+                    <button onclick="make('images/있지/류진.jpg')">
+                        <img src='images/있지/류진.jpg' width="300px"><br>류진</button>
+                    <button onclick="make('images/있지/리아.jpg')">
+                        <img src='images/있지/리아.jpg' width="300px"><br>리아</button>
+                    <button onclick="make('images/있지/예지.jpg')">
+                        <img src='images/있지/예지.jpg' width="300px"><br>예지</button>
+                    <button onclick="make('images/있지/유나.jpg')">
+                        <img src='images/있지/유나.jpg' width="300px"><br>유나</button>
+                    <button onclick="make('images/있지/채령.jpg')">
+                        <img src='images/있지/채령.jpg' width="300px"><br>채령</button>
+                </div>
+                <div class="칸분활">
+                    <h4>아이즈원</h4>
+                    <div class="아이즈원">
+                        <button onclick="make('images/아이즈원/강혜원.jpg')">
+                            <img src='images/아이즈원/강혜원.jpg' width="300px"><br>강혜원</button>
+                        <button onclick="make('images/아이즈원/권은비.jpg')">
+                            <img src='images/아이즈원/권은비.jpg' width="300px"><br>권은비</button>
+                        <button onclick="make('images/아이즈원/김민주.jpg')">
+                            <img src='images/아이즈원/김민주.jpg' width="300px"><br>김민주</button>
+                        <button onclick="make('images/아이즈원/김채원.jpg')">
+                            <img src='images/아이즈원/김채원.jpg' width="300px"><br>김채원</button>
+                        <button onclick="make('images/아이즈원/나코.jpg')">
+                            <img src='images/아이즈원/나코.jpg' width="300px"><br>나코</button>
+                        <button onclick="make('images/아이즈원/사쿠라.jpg')">
+                            <img src='images/아이즈원/사쿠라.jpg' width="300px"><br>사쿠라</button>
+                        <button onclick="make('images/아이즈원/안유진.jpg')">
+                            <img src='images/아이즈원/안유진.jpg' width="300px"><br>안유진</button>
+                        <button onclick="make('images/아이즈원/이채연.jpg')">
+                            <img src='images/아이즈원/이채연.jpg' width="300px"><br>이채연</button>
+                        <button onclick="make('images/아이즈원/장원영.jpg')">
+                            <img src='images/아이즈원/장원영.jpg' width="300px"><br>장원영</button>
+                        <button onclick="make('images/아이즈원/조유리.jpg')">
+                            <img src='images/아이즈원/조유리.jpg' width="300px"><br>조유리</button>
+                        <button onclick="make('images/아이즈원/최예나.jpg')">
+                            <img src='images/아이즈원/최예나.jpg' width="300px"><br>최예나</button>
+                        <button onclick="make('images/아이즈원/히토미.jpg')">
+                            <img src='images/아이즈원/히토미.jpg' width="300px"><br>히토미</button>
+                    </div>
+                </div>
+                <div class="칸분활">
+                    <h4>여자아이들</h4>
+                    <div class="여자아이들">
+                        <button onclick="make('images/여자아이들/미연.jpg')">
+                            <img src='images/여자아이들/미연.jpg' width="300px"><br>미연</button>
+                        <button onclick="make('images/여자아이들/민니.jpg')">
+                            <img src='images/여자아이들/민니.jpg' width="300px"><br>민니</button>
+                        <button onclick="make('images/여자아이들/슈화.jpg')">
+                            <img src='images/여자아이들/슈화.jpg' width="300px"><br>슈화</button>
+                        <button onclick="make('images/여자아이들/우기.jpg')">
+                            <img src='images/여자아이들/우기.jpg' width="300px"><br>우기</button>
+                        <button onclick="make('images/여자아이들/전소연.jpg')">
+                            <img src='images/여자아이들/전소연.jpg' width="300px"><br>전소연</button>
+                    </div>
+                </div>
+                <div class="칸분활">
+                    <h4>블랙핑크</h4>
+                    <div class="블랙핑크">
+                        <button onclick="make('images/블랙핑크/로제.jpg')">
+                            <img src='images/블랙핑크/로제.jpg' width="300px"><br>로제</button>
+                        <button onclick="make('images/블랙핑크/리사.jpg')">
+                            <img src='images/블랙핑크/리사.jpg' width="300px"><br>리사</button>
+                        <button onclick="make('images/블랙핑크/제니.jpg')">
+                            <img src='images/블랙핑크/제니.jpg' width="300px"><br>제니</button>
+                        <button onclick="make('images/블랙핑크/지수.jpg')">
+                            <img src='images/블랙핑크/지수.jpg' width="300px"><br>지수</button>
+                    </div>
+                </div>
+                <div class="칸분활">
+                    <h4>아이오아이</h4>
+                    <div class="아이오아이">
+                        <button onclick="make('images/아이오아이/강미나.jpg')">
+                            <img src='images/아이오아이/강미나.jpg' width="300px"><br>강미나</button>
+                        <button onclick="make('images/아이오아이/김도연.jpg')">
+                            <img src='images/아이오아이/김도연.jpg' width="300px"><br>김도연</button>
+                        <button onclick="make('images/아이오아이/김세정.jpg')">
+                            <img src='images/아이오아이/김세정.jpg' width="300px"><br>김세정</button>
+                        <button onclick="make('images/아이오아이/김소혜.jpg')">
+                            <img src='images/아이오아이/김소혜.jpg' width="300px"><br>김소혜</button>
+                        <button onclick="make('images/아이오아이/유연정.jpg')">
+                            <img src='images/아이오아이/유연정.jpg' width="300px"><br>유연정</button>
+                        <button onclick="make('images/아이오아이/임나영.jpg')">
+                            <img src='images/아이오아이/임나영.jpg' width="300px"><br>임나영</button>
+                        <button onclick="make('images/아이오아이/전소미.jpg')">
+                            <img src='images/아이오아이/전소미.jpg' width="300px"><br>전소미</button>
+                        <button onclick="make('images/아이오아이/정채연.jpg')">
+                            <img src='images/아이오아이/정채연.jpg' width="300px"><br>정채연</button>
+                        <button onclick="make('images/아이오아이/주결경.jpg')">
+                            <img src='images/아이오아이/주결경.jpg' width="300px"><br>주결경</button>
+                        <button onclick="make('images/아이오아이/청하.jpg')">
+                            <img src='images/아이오아이/청하.jpg' width="300px"><br>청하</button>
+                        <button onclick="make('images/아이오아이/최유정.jpg')">
+                            <img src='images/아이오아이/최유정.jpg' width="300px"><br>최유정</button>
+                    </div>
+                </div>
+            </div>
+
+            <h3>2014~2015데뷔
+                <div class="칸분활">
+                    <h4>트와이스</h4>
+                    <div class="트와이스">
+                        <button onclick="make('images/트와이스/나연.jpg')">
+                            <img src='images/트와이스/나연.jpg' width="300px"><br>나연</button>
+                        <button onclick="make('images/트와이스/다현.jpg')">
+                            <img src='images/트와이스/다현.jpg' width="300px"><br>다현</button>
+                        <button onclick="make('images/트와이스/모모.jpg')">
+                            <img src='images/트와이스/모모.jpg' width="300px"><br>모모</button>
+                        <button onclick="make('images/트와이스/미나.jpg')">
+                            <img src='images/트와이스/미나.jpg' width="300px"><br>미나</button>
+                        <button onclick="make('images/트와이스/사나.jpg')">
+                            <img src='images/트와이스/사나.jpg' width="300px"><br>사나</button>
+                        <button onclick="make('images/트와이스/정연.jpg')">
+                            <img src='images/트와이스/정연.jpg' width="300px"><br>정연</button>
+                        <button onclick="make('images/트와이스/지효.jpg')">
+                            <img src='images/트와이스/지효.jpg' width="300px"><br>지효</button>
+                        <button onclick="make('images/트와이스/쯔위.jpg')">
+                            <img src='images/트와이스/쯔위.jpg' width="300px"><br>쯔위</button>
+                        <button onclick="make('images/트와이스/채영.jpg')">
+                            <img src='images/트와이스/채영.jpg' width="300px"><br>채영</button>
+                    </div>
+                </div>
+                <div class="칸분활">
+                    <h4>오마이걸</h4>
+                    <div class="오마이걸">
+                        <button onclick="make('images/오마이걸/미미.jpg')">
+                            <img src='images/오마이걸/미미.jpg' width="300px"><br>미미</button>
+                        <button onclick="make('images/오마이걸/비니.jpg')">
+                            <img src='images/오마이걸/비니.jpg' width="300px"><br>비니</button>
+                        <button onclick="make('images/오마이걸/승희.jpg')">
+                            <img src='images/오마이걸/승희.jpg' width="300px"><br>승희</button>
+                        <button onclick="make('images/오마이걸/아린.jpg')">
+                            <img src='images/오마이걸/아린.jpg' width="300px"><br>아린</button>
+                        <button onclick="make('images/오마이걸/유아.jpg')">
+                            <img src='images/오마이걸/유아.jpg' width="300px"><br>유아</button>
+                        <button onclick="make('images/오마이걸/지호.jpg')">
+                            <img src='images/오마이걸/지호.jpg' width="300px"><br>지호</button>
+                        <button onclick="make('images/오마이걸/효정.jpg')">
+                            <img src='images/오마이걸/효정.jpg' width="300px"><br>효정</button>
+                    </div>
+                </div>
+                <div class="칸분활">
+                    <h4>여자친구</h4>
+                    <div class="여자친구">
+                        <button onclick="make('images/여자친구/소원.jpg')">
+                            <img src='images/여자친구/소원.jpg' width="300px"><br>소원</button>
+                        <button onclick="make('images/여자친구/신비.jpg')">
+                            <img src='images/여자친구/신비.jpg' width="300px"><br>신비</button>
+                        <button onclick="make('images/여자친구/엄지.jpg')">
+                            <img src='images/여자친구/엄지.jpg' width="300px"><br>엄지</button>
+                        <button onclick="make('images/여자친구/예린.jpg')">
+                            <img src='images/여자친구/예린.jpg' width="300px"><br>예린</button>
+                        <button onclick="make('images/여자친구/유주.jpg')">
+                            <img src='images/여자친구/유주.jpg' width="300px"><br>유주</button>
+                        <button onclick="make('images/여자친구/은하.jpg')">
+                            <img src='images/여자친구/은하.jpg' width="300px"><br>은하</button>
+                    </div>
+                </div>
+                <div class="칸분활">
+                    <h4>레드벨벳</h4>
+                    <div class="레드벨벳">
+                        <button onclick="make('images/레드벨벳/슬기.jpg')">
+                            <img src='images/레드벨벳/슬기.jpg' width="300px"><br>슬기</button>
+                        <button onclick="make('images/레드벨벳/아이린.jpg')">
+                            <img src='images/레드벨벳/아이린.jpg' width="300px"><br>아이린</button>
+                        <button onclick="make('images/레드벨벳/예리.jpg')">
+                            <img src='images/레드벨벳/예리.jpg' width="300px"><br>예리</button>
+                        <button onclick="make('images/레드벨벳/웬디.jpg')">
+                            <img src='images/레드벨벳/웬디.jpg' width="300px"><br>웬디</button>
+                        <button onclick="make('images/레드벨벳/조이.jpg')">
+                            <img src='images/레드벨벳/조이.jpg' width="300px"><br>조이</button>
+                    </div>
+                </div>
+                <div class="칸분활">
+                    <h4>마마무</h4>
+                    <div class="마마무">
+                        <button onclick="make('images/마마무/문별.jpg')">
+                            <img src='images/마마무/문별.jpg' width="300px"><br>문별</button>
+                        <button onclick="make('images/마마무/솔라.jpg')">
+                            <img src='images/마마무/솔라.jpg' width="300px"><br>솔라</button>
+                        <button onclick="make('images/마마무/화사.jpg')">
+                            <img src='images/마마무/화사.jpg' width="300px"><br>화사</button>
+                        <button onclick="make('images/마마무/휘인.jpg')">
+                            <img src='images/마마무/휘인.jpg' width="300px"><br>휘인</button>
+                    </div>
+                </div>
+            </h3>
+            <h3>2012~2013데뷔
+                <div class="칸분활">
+                    <h4>에이오에이</h4>
+                    <div class="에이오에이">
+                        <button onclick="make('images/에이오에이/설현.jpg')">
+                            <img src='images/에이오에이/설현.jpg' width="300px"><br>설현</button>
+                        <button onclick="make('images/에이오에이/유나.jpg')">
+                            <img src='images/에이오에이/유나.jpg' width="300px"><br>유나</button>
+                        <button onclick="make('images/에이오에이/찬미.jpg')">
+                            <img src='images/에이오에이/찬미.jpg' width="300px"><br>찬미</button>
+                        <button onclick="make('images/에이오에이/초아.jpg')">
+                            <img src='images/에이오에이/초아.jpg' width="300px"><br>초아</button>
+                        <button onclick="make('images/에이오에이/혜정.jpg')">
+                            <img src='images/에이오에이/혜정.jpg' width="300px"><br>혜정</button>
+                    </div>
+                </div>
+                <div class="칸분활">
+                    <h4>이엑스아이디</h4>
+                    <div class="이엑스아이디">
+                        <button onclick="make('images/이엑스아이디/솔지.jpg')">
+                            <img src='images/이엑스아이디/솔지.jpg' width="300px"><br>솔지</button>
+                        <button onclick="make('images/이엑스아이디/엘이.jpg')">
+                            <img src='images/이엑스아이디/엘이.jpg' width="300px"><br>엘이</button>
+                        <button onclick="make('images/이엑스아이디/정화.jpg')">
+                            <img src='images/이엑스아이디/정화.jpg' width="300px"><br>정화</button>
+                        <button onclick="make('images/이엑스아이디/하니.jpg')">
+                            <img src='images/이엑스아이디/하니.jpg' width="300px"><br>하니</button>
+                        <button onclick="make('images/이엑스아이디/혜린.jpg')">
+                            <img src='images/이엑스아이디/혜린.jpg' width="300px"><br>혜린</button>
+                    </div>
+                </div>
+            </h3>
+            <h3>
+                2010~2011데뷔
+                <div class="칸분활">
+                    <h4>에이핑크</h4>
+                    <div class="에이핑크">
+                        <button onclick="make('images/에이핑크/김남주.jpg')">
+                            <img src='images/에이핑크/김남주.jpg' width="300px"><br>김남주</button>
+                        <button onclick="make('images/에이핑크/박초롱.jpg')">
+                            <img src='images/에이핑크/박초롱.jpg' width="300px"><br>박초롱</button>
+                        <button onclick="make('images/에이핑크/손나은.jpg')">
+                            <img src='images/에이핑크/손나은.jpg' width="300px"><br>손나은</button>
+                        <button onclick="make('images/에이핑크/오하영.jpg')">
+                            <img src='images/에이핑크/오하영.jpg' width="300px"><br>오하영</button>
+                        <button onclick="make('images/에이핑크/윤보미.jpg')">
+                            <img src='images/에이핑크/윤보미.jpg' width="300px"><br>윤보미</button>
+                        <button onclick="make('images/에이핑크/정은지.jpg')">
+                            <img src='images/에이핑크/정은지.jpg' width="300px"><br>정은지</button>
+                    </div>
+                </div>
+                <div class="칸분활">
+                    <h4>걸스데이</h4>
+                    <div class="걸스데이">
+                        <button onclick="make('images/걸스데이/민아.jpg')">
+                            <img src='images/걸스데이/민아.jpg' width="300px"><br>민아</button>
+                        <button onclick="make('images/걸스데이/소진.jpg')">
+                            <img src='images/걸스데이/소진.jpg' width="300px"><br>소진</button>
+                        <button onclick="make('images/걸스데이/유라.jpg')">
+                            <img src='images/걸스데이/유라.jpg' width="300px"><br>유라</button>
+                        <button onclick="make('images/걸스데이/혜리.jpg')">
+                            <img src='images/걸스데이/혜리.jpg' width="300px"><br>혜리</button>
+                    </div>
+                </div>
+                <div class="칸분활">
+                    <h4>미스에이</h4>
+                    <div class="미스에이">
+                        <button onclick="make('images/미스에이/수지.jpg')">
+                            <img src='images/미스에이/수지.jpg' width="300px"><br>수지</button>
+                    </div>
+                </div>
+
+
+                <div class="칸분활">
+                    <h4>씨스타</h4>
+                    <div class="씨스타">
+                        <button onclick="make('images/씨스타/다솜.jpg')">
+                            <img src='images/씨스타/다솜.jpg' width="300px"><br>다솜</button>
+                        <button onclick="make('images/씨스타/보라.jpg')">
+                            <img src='images/씨스타/보라.jpg' width="300px"><br>보라</button>
+                        <button onclick="make('images/씨스타/소유.jpg')">
+                            <img src='images/씨스타/소유.jpg' width="300px"><br>소유</button>
+                        <button onclick="make('images/씨스타/효린.jpg')">
+                            <img src='images/씨스타/효린.jpg' width="300px"><br>효린</button>
+                    </div>
+                </div>
+            </h3>
+    </div>
+    <div class="사진모음3" style="overflow:auto ">
+        <div class="칸분활">
+            <h4>ㄱ</h4>
+            <button onclick="make('images/아이브/가을.jpg')">
+                <img src='images/아이브/가을.jpg' width="300px"><br>가을</button>
+            <button onclick="make('images/아이오아이/강미나.jpg')">
+                <img src='images/아이오아이/강미나.jpg' width="300px"><br>강미나</button>
+            <button onclick="make('images/아이즈원/강혜원.jpg')">
+                <img src='images/아이즈원/강혜원.jpg' width="300px"><br>강혜원</button>
+            <button onclick="make('images/아이즈원/권은비.jpg')">
+                <img src='images/아이즈원/권은비.jpg' width="300px"><br>권은비</button>
+            <button onclick="make('images/에이핑크/김남주.jpg')">
+                <img src='images/에이핑크/김남주.jpg' width="300px"><br>김남주</button>
+            <button onclick="make('images/아이오아이/김도연.jpg')">
+                <img src='images/아이오아이/김도연.jpg' width="300px"><br>김도연</button>
+            <button onclick="make('images/아이즈원/김민주.jpg')">
+                <img src='images/아이즈원/김민주.jpg' width="300px"><br>김민주</button>
+            <button onclick="make('images/아이오아이/김세정.jpg')">
+                <img src='images/아이오아이/김세정.jpg' width="300px"><br>김세정</button>
+            <button onclick="make('images/아이오아이/김소혜.jpg')">
+                <img src='images/아이오아이/김소혜.jpg' width="300px"><br>김소혜</button>
+            <button onclick="make('images/아이즈원/김채원.jpg')">
+                <img src='images/아이즈원/김채원.jpg' width="300px"><br>김채원</button>
+            <button onclick="make('images/아이즈원/김민주.jpg')">
+                <img src='images/아이즈원/김민주.jpg' width="300px"><br>김민주</button>
+        </div>
+        <div class="칸분활">
+            <h4>ㄴ</h4>
+            <button onclick="make('images/트와이스/나연.jpg')">
+                <img src='images/트와이스/나연.jpg' width="300px"><br>나연</button>
+            <button onclick="make('images/아이즈원/나코.jpg')">
+                <img src='images/아이즈원/나코.jpg' width="300px"><br>나코</button>
+            <button onclick="make('images/에스파/닝닝.jpg')">
+                <img src='images/에스파/닝닝.jpg' width="300px"><br>닝닝</button>
+        </div>
+        <div class="칸분활">
+            <h4>ㄷ</h4>
+            <button onclick="make('images/뉴진스/다니엘.jpg')">
+                <img src='images/뉴진스/다니엘.jpg' width="300px"><br>다니엘</button>
+            <button onclick="make('images/씨스타/다솜.jpg')">
+                <img src='images/씨스타/다솜.jpg' width="300px"><br>다솜</button>
+            <button onclick="make('images/트와이스/다현.jpg')">
+                <img src='images/트와이스/다현.jpg' width="300px"><br>다현</button>
+        </div>
+        <div class="칸분활">
+            <h4>ㄹ</h4>
+            <button onclick="make('images/아이브/레이.jpg')">
+                <img src='images/아이브/레이.jpg' width="300px"><br>레이</button>
+            <button onclick="make('images/있지/류진.jpg')">
+                <img src='images/있지/류진.jpg' width="300px"><br>류진</button>
+            <button onclick="make('images/있지/리아.jpg')">
+                <img src='images/있지/리아.jpg' width="300px"><br>리아</button>
+            <button onclick="make('images/아이브/리즈.jpg')">
+                <img src='images/아이브/리즈.jpg' width="300px"><br>리즈</button>
+        </div>
+        <div class="칸분활">
+            <h4>ㅁ</h4>
+            <button onclick="make('images/트와이스/모모.jpg')">
+                <img src='images/트와이스/모모.jpg' width="300px"><br>모모</button>
+            <button onclick="make('images/마마무/문별.jpg')">
+                <img src='images/마마무/문별.jpg' width="300px"><br>문별</button>
+            <button onclick="make('images/트와이스/미나.jpg')">
+                <img src='images/트와이스/미나.jpg' width="300px"><br>미나</button>
+            <button onclick="make('images/여자아이들/미연.jpg')">
+                <img src='images/여자아이들/미연.jpg' width="300px"><br>미연</button>
+            <button onclick="make('images/오마이걸/미미.jpg')">
+                <img src='images/오마이걸/미미.jpg' width="300px"><br>미미</button>
+            <button onclick="make('images/여자아이들/민니.jpg')">
+                <img src='images/여자아이들/민니.jpg' width="300px"><br>민니</button>
+            <button onclick="make('images/걸스데이/민아.jpg')">
+                <img src='images/걸스데이/민아.jpg' width="300px"><br>민아</button>
+            <button onclick="make('images/뉴진스/민지.jpg')">
+                <img src='images/뉴진스/민지.jpg' width="300px"><br>민지</button>
+        </div>
+        <div class="칸분활">
+            <h4>ㅂ</h4>
+            <button onclick="make('images/에이핑크/박초롱.jpg')">
+                <img src='images/에이핑크/박초롱.jpg' width="300px"><br>박초롱</button>
+            <button onclick="make('images/오마이걸/비니.jpg')">
+                <img src='images/오마이걸/비니.jpg' width="300px"><br>비니</button>
+            <button onclick="make('images/씨스타/보라.jpg')">
+                <img src='images/씨스타/보라.jpg' width="300px"><br>보라</button>
+        </div>
+        <div class="칸분활">
+            <h4>ㅅ</h4>
+            <button onclick="make('images/트와이스/사나.jpg')">
+                <img src='images/트와이스/사나.jpg' width="300px"><br>사나</button>
+            <button onclick="make('images/르세라핌/사쿠라.jpg')">
+                <img src='images/르세라핌/사쿠라.jpg' width="300px"><br>사쿠라</button>
+            <button onclick="make('images/에이오에이/설현.jpg')">
+                <img src='images/에이오에이/설현.jpg' width="300px"><br>설현</button>
+            <button onclick="make('images/스테이씨/세은.jpg')">
+                <img src='images/스테이씨/세은.jpg' width="300px"><br>세은</button>
+            <button onclick="make('images/여자친구/소원.jpg')">
+                <img src='images/여자친구/소원.jpg' width="300px"><br>소원</button>
+            <button onclick="make('images/씨스타/소유.jpg')">
+                <img src='images/씨스타/소유.jpg' width="300px"><br>소유</button>
+            <button onclick="make('images/걸스데이/소진.jpg')">
+                <img src='images/걸스데이/소진.jpg' width="300px"><br>소진</button>
+            <button onclick="make('images/에이핑크/손나은.jpg')">
+                <img src='images/에이핑크/손나은.jpg' width="300px"><br>손나은</button>
+            <button onclick="make('images/마마무/솔라.jpg')">
+                <img src='images/마마무/솔라.jpg' width="300px"><br>솔라</button>
+            <button onclick="make('images/이엑스아이디/솔지.jpg')">
+                <img src='images/이엑스아이디/솔지.jpg' width="300px"><br>솔지</button>
+            <button onclick="make('images/레드벨벳/슬기.jpg')">
+                <img src='images/레드벨벳/슬기.jpg' width="300px"><br>슬기</button>
+            <button onclick="make('images/오마이걸/승희.jpg')">
+                <img src='images/오마이걸/승희.jpg' width="300px"><br>승희</button>
+            <button onclick="make('images/스테이씨/수민.jpg')">
+                <img src='images/스테이씨/수민.jpg' width="300px"><br>수민</button>
+            <button onclick="make('images/미스에이/수지.jpg')">
+                <img src='images/미스에이/수지.jpg' width="300px"><br>수지</button>
+            <button onclick="make('images/여자아이들/슈화.jpg')">
+                <img src='images/여자아이들/슈화.jpg' width="300px"><br>슈화</button>
+            <button onclick="make('images/스테이씨/시은.jpg')">
+                <img src='images/스테이씨/시은.jpg' width="300px"><br>시은</button>
+            <button onclick="make('images/여자친구/신비.jpg')">
+                <img src='images/여자친구/신비.jpg' width="300px"><br>신비</button>
+        </div>
+        <div class="칸분활">
+            <h4>ㅇ</h4>
+            <button onclick="make('images/스테이씨/아이사.jpg')">
+                <img src='images/스테이씨/아이사.jpg' width="300px"><br>아이사</button>
+            <button onclick="make('images/오마이걸/아린.jpg')">
+                <img src='images/오마이걸/아린.jpg' width="300px"><br>아린</button>
+            <button onclick="make('images/레드벨벳/아이린.jpg')">
+                <img src='images/레드벨벳/아이린.jpg' width="300px"><br>아이린</button>
+            <button onclick="make('images/아이브/안유진.jpg')">
+                <img src='images/아이브/안유진.jpg' width="300px"><br>안유진</button>
+            <button onclick="make('images/여자친구/엄지.jpg')">
+                <img src='images/여자친구/엄지.jpg' width="300px"><br>엄지</button>
+            <button onclick="make('images/레드벨벳/예리.jpg')">
+                <button onclick="make('images/이엑스아이디/엘이.jpg')">
+                    <img src='images/이엑스아이디/엘이.jpg' width="300px"><br>엘이</button>
+                <img src='images/레드벨벳/예리.jpg' width="300px"><br>예리</button>
+            <button onclick="make('images/여자친구/예린.jpg')">
+                <img src='images/여자친구/예린.jpg' width="300px"><br>예린</button>
+            <button onclick="make('images/있지/예지.jpg')">
+                <img src='images/있지/예지.jpg' width="300px"><br>예지</button>
+            <button onclick="make('images/여자아이들/우기.jpg')">
+                <img src='images/여자아이들/우기.jpg' width="300px"><br>우기</button>
+            <button onclick="make('images/있지/유나.jpg')">
+                <img src='images/있지/유나.jpg' width="300px"><br>유나</button>
+            <button onclick="make('images/에이오에이/유나.jpg')">
+                <img src='images/에이오에이/유나.jpg' width="300px"><br>유나</button>
+            <button onclick="make('images/여자친구/유주.jpg')">
+                <button onclick="make('images/걸스데이/유라.jpg')">
+                    <img src='images/걸스데이/유라.jpg' width="300px"><br>유라</button>
+                <img src='images/트와이스/쯔위.jpg' width="300px"><br>쯔위</button>
+            <button onclick="make('images/오마이걸/유아.jpg')">
+                <img src='images/오마이걸/유아.jpg' width="300px"><br>유아</button>
+            <img src='images/여자친구/유주.jpg' width="300px"><br>유주</button>
+            <button onclick="make('images/아이오아이/유연정.jpg')">
+                <img src='images/아이오아이/유연정.jpg' width="300px"><br>유연정</button>
+            <button onclick="make('images/스테이씨/윤.jpg')">
+                <img src='images/스테이씨/윤.jpg' width="300px"><br>윤</button>
+            <button onclick="make('images/에이핑크/윤보미.jpg')">
+                <img src='images/에이핑크/윤보미.jpg' width="300px"><br>윤보미</button>
+            <button onclick="make('images/레드벨벳/웬디.jpg')">
+                <img src='images/레드벨벳/웬디.jpg' width="300px"><br>웬디</button>
+            <button onclick="make('images/에스파/윈터.jpg')">
+                <img src='images/에스파/윈터.jpg' width="300px"><br>윈터</button>
+            <button onclick="make('images/에이핑크/오하영.jpg')">
+                <img src='images/에이핑크/오하영.jpg' width="300px"><br>오하영</button>
+            <button onclick="make('images/여자친구/은하.jpg')">
+                <img src='images/여자친구/은하.jpg' width="300px"><br>은하</button>
+            <button onclick="make('images/아이브/이서.jpg')">
+                <img src='images/아이브/이서.jpg' width="300px"><br>이서</button>
+            <button onclick="make('images/아이즈원/이채연.jpg')">
+                <img src='images/아이즈원/이채연.jpg' width="300px"><br>이채연</button>
+            <button onclick="make('images/아이오아이/임나영.jpg')">
+                <img src='images/아이오아이/임나영.jpg' width="300px"><br>임나영</button>
+        </div>
+        <div class="칸분활">
+            <h4>ㅈ</h4>
+            <button onclick="make('images/아이브/장원영.jpg')">
+                <img src='images/아이브/장원영.jpg' width="300px"><br>장원영</button>
+            <button onclick="make('images/스테이씨/재이.jpg')">
+                <img src='images/스테이씨/재이.jpg' width="300px"><br>재이</button>
+            <button onclick="make('images/여자아이들/전소연.jpg')">
+                <img src='images/여자아이들/전소연.jpg' width="300px"><br>전소연</button>
+            <button onclick="make('images/아이오아이/전소미.jpg')">
+                <img src='images/아이오아이/전소미.jpg' width="300px"><br>전소미</button>
+            <button onclick="make('images/트와이스/정연.jpg')">
+                <img src='images/트와이스/정연.jpg' width="300px"><br>정연</button>
+            <button onclick="make('images/에이핑크/정은지.jpg')">
+                <img src='images/에이핑크/정은지.jpg' width="300px"><br>정은지</button>
+            <button onclick="make('images/아이오아이/정채연.jpg')">
+                <img src='images/아이오아이/정채연.jpg' width="300px"><br>정채연</button>
+            <button onclick="make('images/이엑스아이디/정화.jpg')">
+                <img src='images/이엑스아이디/정화.jpg' width="300px"><br>정화</button>
+            <button onclick="make('images/블랙핑크/제니.jpg')">
+                <img src='images/블랙핑크/제니.jpg' width="300px"><br>제니</button>
+            <button onclick="make('images/아이즈원/조유리.jpg')">
+                <img src='images/아이즈원/조유리.jpg' width="300px"><br>조유리</button>
+            <button onclick="make('images/레드벨벳/조이.jpg')">
+                <img src='images/레드벨벳/조이.jpg' width="300px"><br>조이</button>
+            <button onclick="make('images/아이오아이/주결경.jpg')">
+                <img src='images/아이오아이/주결경.jpg' width="300px"><br>주결경</button>
+            <button onclick="make('images/트와이스/쯔위.jpg')">
+                <img src='images/트와이스/쯔위.jpg' width="300px"><br>쯔위</button>
+            <button onclick="make('images/블랙핑크/지수.jpg')">
+                <img src='images/블랙핑크/지수.jpg' width="300px"><br>지수</button>
+            <button onclick="make('images/에스파/지젤.jpg')">
+                <img src='images/에스파/지젤.jpg' width="300px"><br>지젤</button>
+            <button onclick="make('images/오마이걸/지호.jpg')">
+                <img src='images/오마이걸/지호.jpg' width="300px"><br>지호</button>
+            <button onclick="make('images/트와이스/지효.jpg')">
+                <img src='images/트와이스/지효.jpg' width="300px"><br>지효</button>
+        </div>
+        <div class="칸분활">
+            <h4>ㅊ</h4>
+            <button onclick="make('images/에이오에이/찬미.jpg')">
+                <img src='images/에이오에이/찬미.jpg' width="300px"><br>찬미</button>
+            <button onclick="make('images/아이오아이/청하.jpg')">
+                <img src='images/아이오아이/청하.jpg' width="300px"><br>청하</button>
+            <button onclick="make('images/있지/채령.jpg')">
+                <img src='images/있지/채령.jpg' width="300px"><br>채령</button>
+            <button onclick="make('images/트와이스/채영.jpg')">
+                <img src='images/트와이스/채영.jpg' width="300px"><br>채영</button>
+            <button onclick="make('images/에이오에이/초아.jpg')">
+                <img src='images/에이오에이/초아.jpg' width="300px"><br>초아</button>
+            <button onclick="make('images/아이즈원/최예나.jpg')">
+                <img src='images/아이즈원/최예나.jpg' width="300px"><br>최예나</button>
+            <button onclick="make('images/아이오아이/최유정.jpg')">
+                <img src='images/아이오아이/최유정.jpg' width="300px"><br>최유정</button>
+            <div class="칸분활">
+                <h4>ㅋ</h4>
+                <button onclick="make('images/에스파/카리나.jpg')">
+                    <img src='images/에스파/카리나.jpg' width="300px"><br>카리나</button>
+                <button onclick="make('images/르세라핌/카즈하.jpg')">
+                    <img src='images/르세라핌/카즈하.jpg' width="300px"><br>카즈하</button>
+            </div>
+            <div class="칸분활">
+                <h4>ㅎ</h4>
+                <button onclick="make('images/뉴진스/하니.jpg')">
+                    <img src='images/뉴진스/하니.jpg' width="300px"><br>하니</button>
+                <button onclick="make('images/르세라핌/허윤진.jpg')">
+                    <img src='images/르세라핌/허윤진.jpg' width="300px"><br>허윤진</button>
+                <button onclick="make('images/걸스데이/혜리.jpg')">
+                    <img src='images/걸스데이/혜리.jpg' width="300px"><br>혜리</button>
+                <button onclick="make('images/뉴진스/혜린.jpg')">
+                    <img src='images/뉴진스/혜린.jpg' width="300px"><br>혜린</button>
+                <button onclick="make('images/뉴진스/혜인.jpg')">
+                    <img src='images/뉴진스/혜인.jpg' width="300px"><br>혜인</button>
+                <button onclick="make('images/에이오에이/혜정.jpg')">
+                    <img src='images/에이오에이/혜정.jpg' width="300px"><br>혜정</button>
+                <button onclick="make('images/르세라핌/홍은채.jpg')">
+                    <img src='images/르세라핌/홍은채.jpg' width="300px"><br>홍은채</button>
+                <button onclick="make('images/마마무/화사.jpg')">
+                    <img src='images/마마무/화사.jpg' width="300px"><br>화사</button>
+                <button onclick="make('images/오마이걸/효정.jpg')">
+                    <img src='images/오마이걸/효정.jpg' width="300px"><br>효정</button>
+                <button onclick="make('images/씨스타/효린.jpg')">
+                    <img src='images/씨스타/효린.jpg' width="300px"><br>효린</button>
+                <button onclick="make('images/마마무/휘인.jpg')">
+                    <img src='images/마마무/휘인.jpg' width="300px"><br>휘인</button>
+                <button onclick="make('images/아이즈원/히토미.jpg')">
+                    <img src='images/아이즈원/히토미.jpg' width="300px"><br>히토미</button>
+            </div>
+        </div>
+    </div>
+    <script src="선택.js"></script> 
 </body>
+
 </html>

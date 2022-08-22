@@ -1,12 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    
+    <select>
+        <option>찾기</option>
+        <option>a</option>
+        <option>b</option>
+        <option>c</option>
+    </select>
+
+    <div id="aa" style="display: block;">a</div>
+    <div id="bb" style="display: block;">b</div>
+    <div id="cc" style="display: block;">c</div>
+    <script>
+        var sel = document.querySelector('select')
+        var aa = document.getElementById('aa')
+        var bb = document.getElementById('bb')
+        var cc = document.getElementById('cc')
+        sel.addEventListener('change', () => {
+            var a = sel.value;
+            document.write
+            if (a == 'a') {
+                aa.style.display = 'block';
+                bb.style.display = 'none';
+                cc.style.display = 'none';
+            }
+            else if (a == 'b') {
+
+                aa.style.display = 'none';
+                bb.style.display = 'block';
+
+                 cc.style.display = 'none';
+            }
+            else if (a == 'c') {
+
+                aa.style.display = 'none';
+                bb.style.display = 'none';
+
+                cc.style.display = 'block';
+            }
+
+        })
+    </script>
+
+
 </body>
+
 </html>
